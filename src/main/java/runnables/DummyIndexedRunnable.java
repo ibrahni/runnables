@@ -7,7 +7,7 @@ public final class DummyIndexedRunnable implements IndexedRunnable
 {
     final static Logger logger = Logger.getLogger(DummyIndexedRunnable.class.getSimpleName());
 
-    public void run(int index) throws Throwable
+    public void run(final int index) throws Throwable
     {
         logger.info(String.valueOf(index));
     }
