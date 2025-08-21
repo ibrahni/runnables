@@ -1,33 +1,33 @@
 ## Score flow
 ```mermaid
   graph TD;
-      Start["StartGame"] --> PlayerAFifteen["PlayerAFifteenLove"]
-      Start --> PlayerBFifteen["LovePlayerBFifteen"]
-  
-      PlayerAFifteen --> PlayerAThirty["PlayerAThirtyLove"]
-      PlayerAFifteen --> FifteenAll["FifteenAll"]
-      PlayerBFifteen --> FifteenAll
-      PlayerBFifteen --> PlayerBThirty["LovePlayerBThirty"]
-  
-      PlayerAThirty --> PlayerAForty["PlayerAFortyLove"]
-      PlayerAThirty --> ThirtyAll["ThirtyAll"]
-      FifteenAll --> ThirtyAll
-      FifteenAll --> PlayerAThirty
-      FifteenAll --> PlayerBThirty
-      PlayerBThirty --> PlayerBForty["LovePlayerBForty"]
-      PlayerBThirty --> ThirtyAll
-  
-      PlayerAForty --> PlayerAWins["PlayerAWins"]
-      PlayerAForty --> Deuce["Deuce"]
-      ThirtyAll --> PlayerAForty
-      ThirtyAll --> PlayerBForty
-      PlayerBForty --> PlayerBWins["PlayerBWins"]
-      PlayerBForty --> Deuce
+      Start["0-0"] --> A15["15-0"]
+      Start --> B15["0-15"]
       
-      Deuce --> PlayerAAdvantage["PlayerAAdvantage"]
-      Deuce --> PlayerBAdvantage["PlayerBAdvantage"]
-  
-      PlayerAAdvantage --> PlayerAWins
-      PlayerAAdvantage --> Deuce
-      PlayerBAdvantage --> PlayerBWins
-      PlayerBAdvantage --> Deuce
+      A15 --> A30["30-0"]
+      A15 --> AB15["15-15"]
+      B15 --> AB15
+      B15 --> B30["0-30"]
+      
+      A30 --> A40["40-0"]
+      A30 --> AB30["30-30"]
+      AB15 --> AB30
+      AB15 --> A30
+      AB15 --> B30
+      B30 --> B40["0-40"]
+      B30 --> AB30
+      
+      A40 --> AWin["Player A wins"]
+      A40 --> Deuce["Deuce"]
+      AB30 --> A40
+      AB30 --> B40
+      B40 --> BWin["Player B wins"]
+      B40 --> Deuce
+      
+      Deuce --> AAdv["Player A Advantage"]
+      Deuce --> BAdv["Player B Advantage"]
+      
+      AAdv --> AWin
+      AAdv --> Deuce
+      BAdv --> BWin
+      BAdv --> Deuce
